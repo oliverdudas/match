@@ -25,7 +25,7 @@ public class MatchGame extends ApplicationAdapter {
         // since last rendered frame.
         gameController.update(Gdx.graphics.getDeltaTime());
 
-        // Clears the screen
+        // Clears the screenn
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         // Render game world to screen
         gameRenderer.render();
