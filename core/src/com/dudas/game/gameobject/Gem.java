@@ -1,5 +1,6 @@
 package com.dudas.game.gameobject;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 
 /**
@@ -80,5 +81,19 @@ public class Gem extends AbstractGameObject {
         YELLOW,
         ORANGE,
         EMPTY
+    }
+
+    public void changeTypeRandomly() {
+        if (this.getType().equals(Gem.GemType.EMPTY)) {
+            this.setType(getRandomGemType());
+        }
+    }
+
+    private static GemType getRandomGemType() {
+        return GemType.values()[MathUtils.random(0, GemType.values().length - 2)]; // -1 to exclude EMPTY
+    }
+
+    public static Gem createNewRandomGem() {
+        return new Gem(getRandomGemType(), 0, 0); //TODO: remove position info
     }
 }

@@ -113,13 +113,6 @@ public class Board {
         gems.add(new Gem(Gem.GemType.ORANGE, 8, 8));
     }
 
-    public void changeGemTypeRandomly(Gem gem) {
-        if (gem.getType().equals(Gem.GemType.EMPTY)) {
-            Gem.GemType randomGemType = Gem.GemType.values()[MathUtils.random(0, Gem.GemType.values().length - 2)]; // -1 to exclude EMPTY
-            gem.setType(randomGemType);
-        }
-    }
-
     public void swapGems(Vector2 position1, Vector2 position2) {
 
     }

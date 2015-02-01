@@ -88,7 +88,7 @@ public class GameController extends InputAdapter {
 
     private Gem handleGemsFallingInColumn(Gem gem) {
         fallingGems.add(gem);
-        board.changeGemTypeRandomly(gem);
+        gem.changeTypeRandomly();
         int nextAboveGemindex = getNextAboveGemindex(gem);
         if (nextAboveGemindex <= 80) {
             Gem aboveGem = getGem(nextAboveGemindex);
